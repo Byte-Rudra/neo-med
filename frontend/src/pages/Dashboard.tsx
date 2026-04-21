@@ -14,6 +14,37 @@ const sideLinks = [
 // Add-record modal types
 type ModalType = 'patient' | 'doctor' | 'room' | 'appointment' | null
 
+function InputField({
+  label,
+  field,
+  type = 'text',
+  placeholder = '',
+  value,
+  onChange,
+}: {
+  label: string
+  field: string
+  type?: string
+  placeholder?: string
+  value: string
+  onChange: (field: string, value: string) => void
+}) {
+  return (
+    <div>
+      <label style={{ fontFamily: 'var(--font-label)', fontSize: 11, fontWeight: 600, color: 'var(--on-surface-variant)', textTransform: 'uppercase' as const, letterSpacing: '0.05em', display: 'block', marginBottom: 6 }}>{label}</label>
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChange(field, e.target.value)}
+        style={{ width: '100%', padding: '12px 16px', borderRadius: 12, border: 'none', background: 'var(--surface-container-low)', fontSize: 14, outline: 'none', fontFamily: 'var(--font-body)' }}
+        onFocus={(e) => { e.currentTarget.style.boxShadow = '0 0 0 2px rgba(0,94,164,0.2)' }}
+        onBlur={(e) => { e.currentTarget.style.boxShadow = 'none' }}
+      />
+    </div>
+  )
+}
+
 export default function Dashboard() {
   const { data: patients, loading: pLoading, error: pError, refetch: refetchPatients } = useApiData<Patient[]>(getPatients)
   const { data: doctors, error: dError, refetch: refetchDoctors } = useApiData<Doctor[]>(getDoctors)
@@ -73,18 +104,9 @@ export default function Dashboard() {
     { icon: 'warning', label: 'Pending Appts', value: stats?.criticalAlerts?.toString() || '—', change: 'Scheduled', changeColor: '#fff', changeBg: 'var(--error)', bg: 'rgba(255,218,214,0.5)' },
   ]
 
-  // Input field renderer
-  const InputField = ({ label, field, type = 'text', placeholder = '' }: { label: string; field: string; type?: string; placeholder?: string }) => (
-    <div>
-      <label style={{ fontFamily: 'var(--font-label)', fontSize: 11, fontWeight: 600, color: 'var(--on-surface-variant)', textTransform: 'uppercase' as const, letterSpacing: '0.05em', display: 'block', marginBottom: 6 }}>{label}</label>
-      <input type={type} placeholder={placeholder} value={formData[field] || ''}
-        onChange={(e) => setFormData({ ...formData, [field]: e.target.value })}
-        style={{ width: '100%', padding: '12px 16px', borderRadius: 12, border: 'none', background: 'var(--surface-container-low)', fontSize: 14, outline: 'none', fontFamily: 'var(--font-body)' }}
-        onFocus={(e) => { e.currentTarget.style.boxShadow = '0 0 0 2px rgba(0,94,164,0.2)' }}
-        onBlur={(e) => { e.currentTarget.style.boxShadow = 'none' }}
-      />
-    </div>
-  )
+  const updateFormField = (field: string, value: string) => {
+    setFormData((current) => ({ ...current, [field]: value }))
+  }
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh' }}>
@@ -393,26 +415,26 @@ export default function Dashboard() {
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {modal === 'patient' && (<>
-                <InputField label="Name" field="name" placeholder="Patient full name" />
-                <InputField label="Email" field="email" type="email" placeholder="email@example.com" />
-                <InputField label="Phone" field="phone" placeholder="+1 234 567 8900" />
-                <InputField label="Date of Birth" field="dob" placeholder="1990-01-15" />
+                <InputField label="Name" field="name" placeholder="Patient full name" value={formData.name || ''} onChange={updateFormField} />
+                <InputField label="Email" field="email" type="email" placeholder="email@example.com" value={formData.email || ''} onChange={updateFormField} />
+                <InputField label="Phone" field="phone" placeholder="+1 234 567 8900" value={formData.phone || ''} onChange={updateFormField} />
+                <InputField label="Date of Birth" field="dob" placeholder="1990-01-15" value={formData.dob || ''} onChange={updateFormField} />
               </>)}
               {modal === 'doctor' && (<>
-                <InputField label="Name" field="name" placeholder="Doctor full name" />
-                <InputField label="Specialty" field="specialty" placeholder="e.g. Neurology" />
-                <InputField label="Email" field="email" type="email" placeholder="doctor@hospital.com" />
-                <InputField label="Phone" field="phone" placeholder="+1 234 567 8900" />
+                <InputField label="Name" field="name" placeholder="Doctor full name" value={formData.name || ''} onChange={updateFormField} />
+                <InputField label="Specialty" field="specialty" placeholder="e.g. Neurology" value={formData.specialty || ''} onChange={updateFormField} />
+                <InputField label="Email" field="email" type="email" placeholder="doctor@hospital.com" value={formData.email || ''} onChange={updateFormField} />
+                <InputField label="Phone" field="phone" placeholder="+1 234 567 8900" value={formData.phone || ''} onChange={updateFormField} />
               </>)}
               {modal === 'room' && (<>
-                <InputField label="Room Number" field="roomNumber" placeholder="e.g. R-101" />
-                <InputField label="Type" field="type" placeholder="e.g. ICU, General, VIP" />
+                <InputField label="Room Number" field="roomNumber" placeholder="e.g. R-101" value={formData.roomNumber || ''} onChange={updateFormField} />
+                <InputField label="Type" field="type" placeholder="e.g. ICU, General, VIP" value={formData.type || ''} onChange={updateFormField} />
               </>)}
               {modal === 'appointment' && (<>
-                <InputField label="Patient ID" field="patientId" type="number" placeholder="e.g. 1" />
-                <InputField label="Doctor ID" field="doctorId" type="number" placeholder="e.g. 1" />
-                <InputField label="Date" field="date" type="datetime-local" />
-                <InputField label="Notes" field="notes" placeholder="Appointment notes..." />
+                <InputField label="Patient ID" field="patientId" type="number" placeholder="e.g. 1" value={formData.patientId || ''} onChange={updateFormField} />
+                <InputField label="Doctor ID" field="doctorId" type="number" placeholder="e.g. 1" value={formData.doctorId || ''} onChange={updateFormField} />
+                <InputField label="Date" field="date" type="datetime-local" value={formData.date || ''} onChange={updateFormField} />
+                <InputField label="Notes" field="notes" placeholder="Appointment notes..." value={formData.notes || ''} onChange={updateFormField} />
               </>)}
             </div>
 
