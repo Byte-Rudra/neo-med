@@ -1,0 +1,17 @@
+# Root repository ignores
+.DS_Store
+.vscode/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local
+
+# Backend
+backend/target/
+backend/.env.properties
+backend/.m2repo/
+backend/.m2home/
+
+# Misc
+*.log

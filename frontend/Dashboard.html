@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "on-surface-variant": "#404752",
+                        "inverse-on-surface": "#eff1f3",
+                        "primary-fixed-dim": "#a2c9ff",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed-dim": "#b9c7e0",
+                        "surface-container-high": "#e6e8ea",
+                        "on-error": "#ffffff",
+                        "secondary": "#006398",
+                        "tertiary-fixed": "#d5e3fd",
+                        "on-secondary-fixed": "#001d31",
+                        "on-primary-fixed": "#001c38",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-container": "#fdfcff",
+                        "on-tertiary-fixed": "#0d1c2f",
+                        "secondary-fixed": "#cce5ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#3a485c",
+                        "secondary-container": "#5bb8fe",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c0c7d4",
+                        "primary": "#005ea4",
+                        "background": "#f7f9fb",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#93ccff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#a2c9ff",
+                        "surface-tint": "#0060a8",
+                        "outline": "#707783",
+                        "tertiary": "#4f5d72",
+                        "on-tertiary-container": "#fdfcff",
+                        "primary-fixed": "#d3e4ff",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#00476e",
+                        "on-primary-fixed-variant": "#004881",
+                        "primary-container": "#0077ce",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-dim": "#d8dadc",
+                        "on-surface": "#191c1e",
+                        "tertiary-container": "#67758c",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#004b73"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f7f9fb; }
+        .glass { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .headline-sm { font-size: 1.5rem; line-height: 2rem; font-weight: 700; }
+        .body-lg { font-size: 1rem; line-height: 1.6; }
+        .label-md { font-size: 0.75rem; line-height: 1rem; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- NavigationDrawer Shell -->
+<aside class="fixed left-0 top-0 h-full w-72 flex flex-col p-6 z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-2xl h-screen rounded-r-2xl shadow-xl shadow-slate-200/50 dark:shadow-none">
+<div class="flex flex-col gap-8 h-full">
+<!-- Header Profile -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl overflow-hidden bg-primary-container">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a male doctor in clinical attire with soft blue background lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHRQT7GQdeA9r6xc15B35DD-q0P2I_E1wj26wFCNnNU4NNS2r9mIh-TIXuANcwFyo0GlIExvVTvq4CMoIPsSsuYlviO7nKiBNROOnH1xZMqjyg7YI2CfkdFBnaY_9F7NEcgK-it1qhQW71hIyBMMTVVKG3phXUs5bj9YHsMxK9ixiF_3aEektVtTWWGtwN6S-c3TmU33nb4JEAobrIAB3EZJJySTMBtSpKrBRJThY-dqRduBeZCvwYrOm0s8MOc5-mYmsSyNMPwlYE"/>
+</div>
+<div>
+<h3 class="text-xl font-bold tracking-tighter text-blue-700">Dr. Smith</h3>
+<p class="font-manrope body-lg tracking-tight text-slate-500">Neurology Dept</p>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 px-4 py-3 bg-white/50 dark:bg-slate-800/50 text-blue-700 dark:text-blue-300 font-semibold shadow-sm rounded-xl transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-manrope body-lg tracking-tight">Overview</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-500 rounded-xl transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-manrope body-lg tracking-tight">Patients</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-500 rounded-xl transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-manrope body-lg tracking-tight">Schedules</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-600 dark:text-slate-400 hover:text-blue-500 rounded-xl transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-manrope body-lg tracking-tight">Settings</span>
+</a>
+</nav>
+<!-- Bottom Brand Anchor -->
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<div class="flex items-center gap-2 px-4">
+<span class="material-symbols-outlined text-blue-700" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+<span class="text-xl font-bold tracking-tighter text-blue-700">NEO-MED</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Content Canvas -->
+<main class="ml-72 min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-8 py-4 w-full w-full sticky top-0 z-40 bg-white/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-4">
+<h1 class="font-manrope headline-sm text-slate-900">Welcome, Dr. Smith</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/20 w-64 transition-all body-lg" placeholder="Search data..." type="text"/>
+</div>
+<button class="relative p-2 rounded-full text-slate-500 hover:bg-slate-100/50 transition-colors active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 flex flex-col gap-8">
+<!-- Hero Card: Live Neural Particle Activity -->
+<section class="relative w-full h-[320px] rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-gradient-to-br from-primary to-primary-container">
+<img class="w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="abstract visualization of neural networks and glowing blue particles moving through dark clinical space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATP8fygvHxGLJJI8o1iZ2_g7L4IM830XEZqtvL8dxGiIMMDgxEjce7BnUhLOGEa2xwPWiL9-Vxpe_L_N8JY9y6dg6R5_mCOB5Wm-jWVcdIPId0H2hZPSpQRfGkPm9H6KE-SDLMmKFN4fYPacVK32-ls5ahz9Lyv9ztaqZeitxQU0BXcR51SrqKegsezjGcrNJhdOVX876tduxDIvS3-5-c0KOh6r4B_S73Fb2jYT7aO2FoaukNLboMcZ9V5pRogx67NcKvA0RvyNmc"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="relative h-full p-10 flex flex-col justify-end text-white">
+<div class="flex items-center gap-3 mb-2">
+<span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 glass text-white text-xs font-bold uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-blue-300 animate-pulse"></span>
+                            Live System Active
+                        </span>
+</div>
+<h2 class="text-4xl font-extrabold tracking-tight mb-2">3D Network Active</h2>
+<p class="max-w-xl body-lg opacity-90">Real-time neural sync monitor processing patient sensory throughput across all active clinical units in the East Wing.</p>
+</div>
+</section>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Stat Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-secondary-fixed rounded-xl text-secondary">
+<span class="material-symbols-outlined">group</span>
+</div>
+<span class="text-secondary text-sm font-bold">+12%</span>
+</div>
+<div>
+<p class="label-md text-on-surface-variant font-medium">Active Patients</p>
+<h4 class="text-3xl font-bold text-on-surface mt-1">1,284</h4>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-tertiary-fixed rounded-xl text-tertiary">
+<span class="material-symbols-outlined">bed</span>
+</div>
+<span class="text-error text-sm font-bold">-4%</span>
+</div>
+<div>
+<p class="label-md text-on-surface-variant font-medium">Available Beds</p>
+<h4 class="text-3xl font-bold text-on-surface mt-1">42</h4>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-primary-fixed rounded-xl text-primary">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<span class="text-primary text-sm font-bold">Stable</span>
+</div>
+<div>
+<p class="label-md text-on-surface-variant font-medium">Staff on Duty</p>
+<h4 class="text-3xl font-bold text-on-surface mt-1">156</h4>
+</div>
+</div>
+<!-- Stat Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl flex flex-col gap-4 ring-1 ring-error/10">
+<div class="flex justify-between items-start">
+<div class="p-3 bg-error-container rounded-xl text-error">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<span class="px-2 py-1 bg-error text-white text-[10px] rounded-full font-bold">HIGH</span>
+</div>
+<div>
+<p class="label-md text-on-surface-variant font-medium">Critical Alerts</p>
+<h4 class="text-3xl font-bold text-on-surface mt-1">03</h4>
+</div>
+</div>
+</section>
+<!-- Bottom Content: Recent Patients & Analytics -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+<!-- Recent Patients Table (Glassmorphism Card) -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl">
+<div class="flex items-center justify-between mb-8">
+<h3 class="headline-sm text-on-surface">Recent Patients</h3>
+<button class="text-primary font-bold body-lg hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto no-scrollbar">
+<table class="w-full text-left">
+<thead>
+<tr class="text-on-surface-variant border-b border-outline-variant/10">
+<th class="pb-4 font-bold label-md uppercase tracking-wider">Patient Name</th>
+<th class="pb-4 font-bold label-md uppercase tracking-wider">Status</th>
+<th class="pb-4 font-bold label-md uppercase tracking-wider text-right">Last Checked</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close up headshot of an elderly female patient with warm smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM552eoUAUZxP1ORHJqmi3_j7SFAVylsr63AGk1Hn80ttqm-tQDGvZ83jqCgVabdfVApgzNY74ba0eM2ESR-GLiyhLELgZ9bhax8Y815EfPVshpiAmL4OwzI0P5bdTOm6fgfmjmRaZWM2NKY6FkxfQWs_Ah29XCpTkQ2NxbW7Muz_ElWyUQp476ajOme25DXEZXkUsv8F7PNaRsRZup3NpaCEebwwORjbFuhJrDReXtYunOPqvcxJS7GgFgIkxG7zkCq_I65KWvPWM"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Elena Rodriguez</p>
+<p class="label-md text-on-surface-variant">ID: #NM-2901</p>
+</div>
+</div>
+</td>
+<td class="py-5">
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-secondary-fixed text-on-secondary-fixed text-xs font-bold">RECOVERING</span>
+</td>
+<td class="py-5 text-right font-medium text-on-surface-variant">12 mins ago</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a middle aged man with glasses in a hospital setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ITtLpB84LdgqBNneb3z_Y0tvW1H958WgnyB51ZHIUlpup2otUFbfjfSm2Jf7l51AL-2LIKuD56SBZesHHOQcKDRh5zX6R_0efZrMCl0nxHuPsplw9aVsPrJuOJkBKDNCnLH4gnmozInWQEiwkef7XJJdkXEVd9oEkbUPdMB5q74UYIgMHhgFHqO4KRuksag3vNqmFPOuAe6TOQSQPxg678BefWSG_OnERWfB9wY8u4LuYnnxCEiSGGeEsArUks2-_cS4mdx7gAdB"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Marcus Thorne</p>
+<p class="label-md text-on-surface-variant">ID: #NM-8821</p>
+</div>
+</div>
+</td>
+<td class="py-5">
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-error-container text-on-error-container text-xs font-bold">CRITICAL</span>
+</td>
+<td class="py-5 text-right font-medium text-on-surface-variant">Just now</td>
+</tr>
+<tr class="hover:bg-surface-container-low/50 transition-colors">
+<td class="py-5">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="portrait of a young woman with serene expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzfTMDn-82iwYbE_U6KDrfV1lGMAgFVVMtLzsg7oWVOksyM0WfYL5149gdMmTCAeUEpDE-AYdB8UCtlkz1dRhqPRRJ99oCkK0g51kFXoI8KYkpyjkzh9t8Ph5ckn61yt2NgWOd8Thr8AhRi45Sj7zv9p5m0C4JwTgyIAPUrNvKE-y8LwBp9WQ4vf00ebVkNe3fh2RWhLjh0KlpRm_7D6Rwy3HN2Cej7QvdBlj-kCTfvdu2b2rU2mpeA2_BIx54a_Q-7CDRDpcygOI4"/>
+</div>
+<div>
+<p class="font-bold text-on-surface">Sarah Jenkins</p>
+<p class="label-md text-on-surface-variant">ID: #NM-4402</p>
+</div>
+</div>
+</td>
+<td class="py-5">
+<span class="inline-flex items-center px-2 py-1 rounded-md bg-surface-variant text-on-surface-variant text-xs font-bold">STABLE</span>
+</td>
+<td class="py-5 text-right font-medium text-on-surface-variant">45 mins ago</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Quick Vitals (Asymmetric Sidebar Element) -->
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-6">
+<h3 class="text-xl font-bold text-on-surface">System Vitals</h3>
+<div class="space-y-6">
+<!-- Biometric Glass Gauge -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="label-md font-bold uppercase text-on-surface-variant">CPU Neural Load</span>
+<span class="text-primary font-bold">88%</span>
+</div>
+<div class="h-3 w-full bg-white rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary w-[88%] rounded-full shadow-[0_0_12px_rgba(0,94,164,0.3)]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="label-md font-bold uppercase text-on-surface-variant">Memory Allocation</span>
+<span class="text-secondary font-bold">62%</span>
+</div>
+<div class="h-3 w-full bg-white rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-secondary-container w-[62%] rounded-full shadow-[0_0_12px_rgba(0,99,152,0.2)]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="label-md font-bold uppercase text-on-surface-variant">Network Latency</span>
+<span class="text-tertiary font-bold">12ms</span>
+</div>
+<div class="h-3 w-full bg-white rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[15%] rounded-full"></div>
+</div>
+</div>
+</div>
+<div class="mt-4 p-4 bg-primary rounded-xl text-white flex items-center gap-4">
+<div class="p-2 bg-white/20 rounded-lg">
+<span class="material-symbols-outlined">auto_fix_high</span>
+</div>
+<div>
+<p class="font-bold text-sm">Optimization Suggestion</p>
+<p class="text-xs opacity-80">Reroute data through Node 7 for better stability.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</body></html>

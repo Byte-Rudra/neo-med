@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neo-Med | Next-Generation Healthcare Management</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface": "#191c1e",
+                    "tertiary-fixed-dim": "#93ccff",
+                    "primary": "#005ea4",
+                    "secondary-fixed-dim": "#b9c7e0",
+                    "secondary-container": "#d5e3fd",
+                    "primary-fixed-dim": "#a2c9ff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#0d1c2f",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-dim": "#d8dadc",
+                    "tertiary": "#006194",
+                    "secondary-fixed": "#d5e3fd",
+                    "on-surface-variant": "#404752",
+                    "on-secondary": "#ffffff",
+                    "outline": "#707783",
+                    "on-tertiary-fixed": "#001d31",
+                    "on-error": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-tint": "#0060a8",
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#fdfcff",
+                    "on-background": "#191c1e",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed": "#d3e4ff",
+                    "on-secondary-fixed-variant": "#3a485c",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f2f4f6",
+                    "outline-variant": "#c0c7d4",
+                    "on-primary-fixed": "#001c38",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#cce5ff",
+                    "inverse-surface": "#2d3133",
+                    "background": "#f7f9fb",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004b73",
+                    "on-tertiary-container": "#fdfcff",
+                    "secondary": "#515f74",
+                    "primary-container": "#0077ce",
+                    "on-primary-fixed-variant": "#004881",
+                    "on-secondary-container": "#57657b",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-primary": "#a2c9ff",
+                    "surface": "#f7f9fb",
+                    "tertiary-container": "#007bb9",
+                    "surface-variant": "#e0e3e5",
+                    "surface-container": "#eceef0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex items-center justify-between px-8 py-4 max-w-screen-2xl mx-auto">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400 text-3xl">clinical_notes</span>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50 font-headline">Neo-Med</span>
+</div>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="text-blue-600 dark:text-blue-400 font-semibold border-b-2 border-blue-600 hover:text-blue-500 transition-colors" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 transition-colors" href="#">Portal</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 transition-colors" href="#">Analytics</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-blue-500 transition-colors" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary font-semibold text-sm hover:shadow-[0_0_20px_rgba(0,94,164,0.3)] transition-all active:scale-95 duration-200 ease-in-out">
+                    Emergency Login
+                </button>
+</div>
+</div>
+</nav>
+<main class="pt-24 overflow-hidden">
+<!-- Hero Section -->
+<section class="relative px-8 py-20 md:py-32 max-w-screen-2xl mx-auto flex flex-col items-center text-center overflow-visible">
+<!-- Background Decorative Element -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-primary-fixed/20 blur-[120px] rounded-full -z-10"></div>
+<div class="max-w-4xl">
+<h1 class="text-6xl md:text-8xl font-extrabold font-headline tracking-tight text-on-surface leading-[1.1] mb-8">
+                    Next-Generation <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-tertiary">Healthcare</span> Management
+                </h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-body leading-relaxed mb-12 max-w-2xl mx-auto">
+                    Seamless patient care, integrated 3D neuro-analytics, and advanced system metrics in one unified platform.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary text-on-primary font-bold text-lg hover:bg-primary-container transition-all shadow-lg shadow-primary/10">
+                        Explore Portal
+                    </button>
+<button class="w-full sm:w-auto px-8 py-4 rounded-xl bg-surface-container-lowest/40 glass-effect text-primary font-bold text-lg border border-outline-variant/15 hover:bg-surface-container-lowest/60 transition-all">
+                        Virtual Tour
+                    </button>
+</div>
+</div>
+<!-- Hero Image / Visual Mockup Area -->
+<div class="mt-20 relative w-full aspect-video md:aspect-[21/9] rounded-xl overflow-hidden shadow-2xl shadow-blue-900/10 border border-outline-variant/15">
+<img alt="Medical Dashboard" class="w-full h-full object-cover" data-alt="Modern minimalist medical dashboard showing complex 3D brain scans and real-time biometric data with clean typography and blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5UD1awuP44rPj2qbuGnVXkmJz3JMFv--66MlRLBVVcxfq9c2De7kw9-yeq7v1OzniKK2IF4q4qemqLUSx2aazPjGAWv4VlPJuIE3N2l6SbikFK2zp1HlxdmO0aU3Hx-DsMFm_oFoUtml82oerCBHxvmwQExLMUap2h8ip9TLfSzIQfn_nlVKmtjdO4jgnqVzkXVYalTBGzYLcH9cKcG3Q1qEiAPdJKaFMxIySKOqZegufXcme9tffyWuR6c1dXB_jCa8ylvMNU3gS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-60"></div>
+</div>
+</section>
+<!-- Primary Content Area: Feature Cards -->
+<section class="px-8 py-24 bg-surface-container-low">
+<div class="max-w-screen-2xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Card 1: Patient Intelligence -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest border border-transparent hover:border-primary/10 transition-all duration-300 flex flex-col items-start gap-6">
+<div class="w-14 h-14 rounded-xl bg-primary-fixed/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">neurology</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-4 text-on-surface">Patient Intelligence</h3>
+<p class="text-on-surface-variant font-body leading-relaxed">
+                                AI-driven diagnostic assistance that synthesizes multi-modal patient history into actionable recovery pathways.
+                            </p>
+</div>
+<div class="mt-auto pt-4 flex items-center text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform cursor-pointer">
+                            Learn more <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 2: Live Neural Network -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest border border-transparent hover:border-primary/10 transition-all duration-300 flex flex-col items-start gap-6">
+<div class="w-14 h-14 rounded-xl bg-tertiary-fixed/30 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-4 text-on-surface">Live Neural Network</h3>
+<p class="text-on-surface-variant font-body leading-relaxed">
+                                Real-time connectivity across departments ensuring surgical precision and instantaneous data synchronization.
+                            </p>
+</div>
+<div class="mt-auto pt-4 flex items-center text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform cursor-pointer">
+                            Learn more <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</div>
+</div>
+<!-- Card 3: Integrated Analytics -->
+<div class="group p-8 rounded-xl bg-surface-container-lowest border border-transparent hover:border-primary/10 transition-all duration-300 flex flex-col items-start gap-6">
+<div class="w-14 h-14 rounded-xl bg-secondary-fixed/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+</div>
+<div>
+<h3 class="text-2xl font-bold font-headline mb-4 text-on-surface">Integrated Analytics</h3>
+<p class="text-on-surface-variant font-body leading-relaxed">
+                                Comprehensive operational metrics displayed in an editorial layout for high-stakes decision making.
+                            </p>
+</div>
+<div class="mt-auto pt-4 flex items-center text-primary font-semibold text-sm group-hover:translate-x-1 transition-transform cursor-pointer">
+                            Learn more <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Bento-ish section for visual depth -->
+<section class="px-8 py-24">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-8 h-[400px] rounded-xl overflow-hidden relative group border border-outline-variant/15">
+<img alt="Doctor examining data" class="w-full h-full object-cover" data-alt="High-end medical professional interacting with a translucent holographic display in a brightly lit modern hospital corridor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxndc4wDqWPb-FRyg-hmlsktTEX7ncQcUovOhiVbtir-tHZhyMz1RUgSDhBd01dHYIz6-ZG9azIkiy2dMNw6XqnPU54MqepqOfnez2D1SNuO3VXUSdhFy1y19dQLyeL7HAIbyqoQqgYWSZ-6VOjMBDU5912X9dCCLFDLzZx78TTiwQIsuvv7J2pMjUu7aTcdv-M9_Y2QhBOb8SvTdAqgph9jxEM5dxsM1SalkC25tpLDYrIZYkcPWC_Ix-lgM5syLWbCwN8dc0wwc9"/>
+<div class="absolute inset-0 bg-gradient-to-r from-on-surface/80 to-transparent p-12 flex flex-col justify-end">
+<h4 class="text-3xl font-headline font-bold text-white mb-2">Pioneering Surgery</h4>
+<p class="text-slate-200 font-body max-w-md">How Neo-Med’s neural tracking reduced complexity by 40% in critical cases.</p>
+</div>
+</div>
+<div class="lg:col-span-4 h-[400px] rounded-xl bg-gradient-to-br from-tertiary to-tertiary-container p-12 flex flex-col justify-between text-on-tertiary">
+<div>
+<span class="material-symbols-outlined text-5xl mb-6">verified_user</span>
+<h4 class="text-3xl font-headline font-bold mb-4 leading-tight">Sanctuary of Security</h4>
+<p class="font-body opacity-90">Your data is protected by quantum-encrypted neural gateways, ensuring absolute privacy.</p>
+</div>
+<a class="inline-flex items-center gap-2 font-bold hover:underline" href="#">
+                        View Compliance <span class="material-symbols-outlined">launch</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full rounded-t-3xl bg-slate-100 dark:bg-slate-900 mt-12">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 py-12 w-full max-w-screen-2xl mx-auto">
+<div class="flex flex-col gap-4 mb-8 md:mb-0 text-center md:text-left">
+<div class="flex items-center gap-2 justify-center md:justify-start">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">clinical_notes</span>
+<span class="text-lg font-bold text-slate-900 dark:text-slate-50 font-headline">Neo-Med</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400 font-body max-w-xs">
+                    Advancing the boundaries of clinical precision through sanctuary-grade design and neural intelligence.
+                </p>
+<div class="text-xs text-slate-500 font-label mt-4">
+                    © 2024 Neo-Med Clinical Sanctuary. All rights reserved.
+                </div>
+</div>
+<div class="flex flex-wrap justify-center gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-bold text-slate-900 dark:text-slate-50 text-sm uppercase tracking-widest font-label">Platform</span>
+<div class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:underline decoration-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline decoration-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Portal</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline decoration-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Analytics</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-bold text-slate-900 dark:text-slate-50 text-sm uppercase tracking-widest font-label">Connect</span>
+<div class="flex flex-col gap-2">
+<a class="text-slate-500 dark:text-slate-400 hover:underline decoration-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline decoration-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-slate-500 dark:text-slate-400 hover:underline decoration-blue-500 transition-opacity opacity-80 hover:opacity-100" href="#">Twitter</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
