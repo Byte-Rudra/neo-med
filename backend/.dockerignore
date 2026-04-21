@@ -1,0 +1,7 @@
+target
+.m2repo
+.m2home
+.env.properties
+.git
+.gitignore
+HELP.md
